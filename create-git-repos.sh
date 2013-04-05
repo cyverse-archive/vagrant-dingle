@@ -45,6 +45,12 @@ And from an ivory tower hears her call
 EOF
 }
 
+# Configure the git client
+configure_git () {
+    git config --global user.email "vagrant@iplantc.org"
+    git config --global user.name "Vagrant VM"
+}
+
 # Creates the git repositories.
 create_repositories () {
     rm -rf local remote
@@ -74,5 +80,6 @@ populate_repositories () {
 
 mkdir -p ~/git-repos
 cd ~/git-repos
+configure_git
 create_repositories
 populate_repositories
